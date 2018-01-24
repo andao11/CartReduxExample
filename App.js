@@ -18,7 +18,7 @@ export default class App extends React.Component {
               key="tabHome"
               title="Home">
 
-              <Scene key="home" component={Home} title="Início" />
+              <Scene key="home" component={Home} title="Adicionar produtos:" />
 
             </Scene>
 
@@ -27,7 +27,7 @@ export default class App extends React.Component {
               title="Carrinho"
               icon={Badge}>
 
-              <Scene key="telateste" component={Tela} title="Tela" />
+              <Scene key="telateste" component={Tela} title="Carrinho" />
 
             </Scene>
           </Scene>

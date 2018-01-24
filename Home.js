@@ -14,7 +14,7 @@ class Home extends React.Component {
             username: '',
             password: '',
             nomeProduto: '',
-            vlrProduto: 0.00
+            vlrProduto: 0
         }
     }
 
@@ -52,7 +52,8 @@ class Home extends React.Component {
                     <TextInput 
                     style={{ flex: 1 }} 
                     onChangeText={(text) => this.setState({ vlrProduto: text })}
-                    value={this.state.vlrProduto} />
+                    value={this.state.vlrProduto.toString()}
+                    keyboardType={"numeric"} />
                 </View>
                 <Button title="Adicionar ao Carrinho" onPress={() => this._addToCart()} />
                 {/*<Text>Usuário:</Text>
