@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Button, FlatList } from 'react-native';
+import { View, Button, FlatList } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as ActionsRedux from './actions/index'; //Import your actions
+import { Card, CardItem, Text, Body } from 'native-base';
 
 class Tela extends React.Component {
 
@@ -20,7 +21,6 @@ class Tela extends React.Component {
                     data={this.props.cart}
                     keyExtractor={this._keyExtractor}
                     renderItem={this._renderItem}
-                    ItemSeparatorComponent={this._renderSeparator}
                 />
             </View>
         )
@@ -30,13 +30,18 @@ class Tela extends React.Component {
 
     _renderItem = ({item}) => {
         return (
-        <View style={{flex: 1, alignItems: 'center'}}>
-            <Text style={{flex: 1, textAlign: 'left', fontSize: 20}}>{item.name} - {item.price}</Text>
-        </View>)
-    }
-
-    _renderSeparator = () => {
-        return (<View style={{height: 1, backgroundColor: '#d9d9d9'}} />)
+            <Card>
+                <CardItem header>
+                    <Text>{item.name}</Text>
+                </CardItem>
+                <CardItem>
+                    <Body>
+                        <Text>
+                            <Text>R$ {item.price}</Text>
+                        </Text>
+                    </Body>
+                </CardItem>
+            </Card>)
     }
 }
 

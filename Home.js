@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, TextInput } from 'react-native';
+import { Button, Content, Text } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import * as ActionsRedux from './actions/index'; //Import your actions
+
 
 class Home extends React.Component {
     constructor(props){
@@ -55,16 +57,12 @@ class Home extends React.Component {
                     value={this.state.vlrProduto.toString()}
                     keyboardType={"numeric"} />
                 </View>
+                <Content >
+                    <Button rounded primary onPress={() => this._addToCart()} style={{ alignSelf: 'center' }}>
+                        <Text><Icon name="shopping-cart" size={20} /> Adicionar ao carrinho</Text>
+                    </Button>
+                </Content>
                 <Button title="Adicionar ao Carrinho" onPress={() => this._addToCart()} />
-                {/*<Text>Usuário:</Text>
-                <TextInput />
-
-                <Text>Senha:</Text>
-                <TextInput />
-
-                <Text>Usuário: {this.props.username}</Text>
-                <Text>Senha: {this.props.password}</Text>
-                <Button title="Testar" onPress={() => {this.props.setCount(this.props.count) }} />*/}
             </View>
         )
     }
