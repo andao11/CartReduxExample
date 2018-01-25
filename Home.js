@@ -20,11 +20,6 @@ class Home extends React.Component {
         }
     }
 
-    componentDidMount(){
-        this.props.getData({username: 'teste', password: 'testesenha', count: 0});
-        console.log(this.props);
-    }
-
     _addToCart = () =>{
         this.props.addCart({name: this.state.nomeProduto, price: this.state.vlrProduto});
         this.setState({nomeProduto: '', vlrProduto: ''});

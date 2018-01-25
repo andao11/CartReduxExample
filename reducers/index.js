@@ -14,11 +14,6 @@ function cloneJSON(json){return JSON.parse(JSON.stringify(json))}
 const dataReducer = (state = dataState, action) => {
     console.log(action);
     switch (action.type) {
-        case 'DATA_AVAILABLE':
-            console.log("ACERTOU");
-            return Object.assign({}, state, {password: action.password, username: action.username});
-            break;
-    
         case 'DATA_COUNT':
             console.log("DATA_COUNT", state);
             return Object.assign({}, state, {count: (action.count+1)});

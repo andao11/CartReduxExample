@@ -3,19 +3,6 @@ export const DATA_COUNT = 'DATA_COUNT';
 export const GET_DATA_COUNT = 'GET_DATA_COUNT';
 export const ADD_CART = 'ADD_CART';
 
-export function getData(data){
-    let action = {
-        type: DATA_AVAILABLE,
-        username: data.username,
-        password: data.password
-    };
-    //return action;
-    
-    return (dispatch) => {
-        dispatch(action);
-    }
-}
-
 export function setCount(count){
     let action = {
         type: DATA_COUNT,
